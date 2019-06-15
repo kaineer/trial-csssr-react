@@ -6,9 +6,13 @@ import { Interval } from './interval';
 import { number } from 'prop-types';
 
 class TimerComponent extends Component {
-  state = {
-    currentTime: 0
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      currentTime: 0
+    };
+  }
 
   render() {
     return (
