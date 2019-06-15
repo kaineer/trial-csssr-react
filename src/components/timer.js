@@ -38,9 +38,8 @@ class TimerComponent extends Component {
     return () => {
       const { currentTime, running } = this.state;
 
-      this.setState({ currentTime: currentTime + interval });
-
       if (running) {
+        this.setState({ currentTime: currentTime + interval });
         this.startTimer();
       }
     }
