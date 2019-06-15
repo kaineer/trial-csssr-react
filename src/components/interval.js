@@ -1,7 +1,9 @@
 // src/components/interval.js
 
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from '../slomux/connect';
+
+import { func, number } from 'prop-types';
 
 const IntervalComponent = ({currentInterval, changeInterval}) => (
   <div>
@@ -14,6 +16,11 @@ const IntervalComponent = ({currentInterval, changeInterval}) => (
     </span>
   </div>
 );
+
+IntervalComponent.propTypes = {
+  currentInterval: number.isRequired,
+  changeInterval: func.isRequired
+};
 
 export const Interval = connect(
   state => ({
