@@ -1,7 +1,7 @@
 // src/components/provider.js
 
 import { Component, Children } from 'react';
-import PropTypes from 'prop-types';
+import { object } from 'prop-types';
 
 export class Provider extends Component {
   getChildContext() {
@@ -16,5 +16,5 @@ export class Provider extends Component {
 }
 
 Provider.childContextTypes = {
-  store: PropTypes.object
+  store: object.isRequired
 };
