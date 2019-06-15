@@ -1,8 +1,11 @@
 // src/components/timer.js
 
+import React, { Component } from 'react';
 import { Interval } from './interval';
 
-class TimerComponent extends React.Component {
+import { number } from 'prop-types';
+
+class TimerComponent extends Component {
   state = {
     currentTime: 0
   };
@@ -34,6 +37,10 @@ class TimerComponent extends React.Component {
     this.setState({ currentTime: 0 });
   }
 }
+
+TimerComponent.propTypes = {
+  currentInterval: number.isRequired
+};
 
 export const Timer = connect(
   state => ({
