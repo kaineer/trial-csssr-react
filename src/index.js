@@ -15,27 +15,7 @@ import PropTypes from "prop-types";
 import { createStore } from './slomux/store';
 import { connect } from './slomux/connect';
 import { Provider } from './components/provider';
-
-// APP
-
-// actions
-const CHANGE_INTERVAL = "CHANGE_INTERVAL";
-
-// action creators
-const changeInterval = value => ({
-  type: CHANGE_INTERVAL,
-  payload: value
-});
-
-// reducers
-const reducer = (state, action) => {
-  switch (action.type) {
-    case CHANGE_INTERVAL:
-      return (state += action.payload);
-    default:
-      return {};
-  }
-};
+import { reducer } from './reducer';
 
 // components
 
