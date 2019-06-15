@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { Interval } from './interval';
 
 import { number } from 'prop-types';
+import { connect } from '../slomux/connect';
 
 class TimerComponent extends Component {
   constructor(props) {
