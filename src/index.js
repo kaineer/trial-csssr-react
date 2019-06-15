@@ -1,7 +1,6 @@
 import "./styles.css";
 import React from "react";
 import ReactDOM from "react-dom";
-import PropTypes from "prop-types";
 
 // Slomux — упрощённая, сломанная реализация Flux.
 // Перед вами небольшое приложение, написанное на React + Slomux.
