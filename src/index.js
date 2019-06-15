@@ -18,31 +18,7 @@ import { Provider } from './components/provider';
 import { reducer } from './reducer';
 
 // components
-
-class IntervalComponent extends React.Component {
-  render() {
-    return (
-      <div>
-        <span>
-          Интервал обновления секундомера: {this.props.currentInterval} сек.
-        </span>
-        <span>
-          <button onClick={() => this.props.changeInterval(-1)}>-</button>
-          <button onClick={() => this.props.changeInterval(1)}>+</button>
-        </span>
-      </div>
-    );
-  }
-}
-
-const Interval = connect(
-  dispatch => ({
-    changeInterval: value => dispatch(changeInterval(value))
-  }),
-  state => ({
-    currentInterval: state
-  })
-)(IntervalComponent);
+import { Interval } from './components/interval';
 
 class TimerComponent extends React.Component {
   state = {
