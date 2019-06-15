@@ -6,6 +6,8 @@ import { Interval } from './interval';
 import { number } from 'prop-types';
 import { connect } from '../slomux/connect';
 
+const msPerSecond = 1000;
+
 class TimerComponent extends Component {
   constructor(props) {
     super(props);
@@ -29,6 +31,26 @@ class TimerComponent extends Component {
           <button onClick={this.handleStop}>Стоп</button>
         </div>
       </div>
+    );
+  }
+
+  handleTimeout(interval) {
+    return () => {
+      const { currentTime, running } = this.state;
+
+      this.setState({ currentTime: currentTime + interval });
+
+      if (running) {
+        this.startTimer();
+      }
+    }
+  }
+
+  startTimer() {
+    const { currentInterval } = this.props;
+    setTimeout(
+      this.handleTimeout(currentInterval),
+      currentInterval * msPerSecond
     );
   }
 
