@@ -1,9 +1,9 @@
 // src/components/provider.js
 
-import React from 'react';
+import { Component, Children } from 'react';
 import PropTypes from 'prop-types';
 
-export class Provider extends React.Component {
+export class Provider extends Component {
   getChildContext() {
     return {
       store: this.props.store
@@ -11,7 +11,7 @@ export class Provider extends React.Component {
   }
 
   render() {
-    return React.Children.only(this.props.children);
+    return Children.only(this.props.children);
   }
 }
 
