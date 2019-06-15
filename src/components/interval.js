@@ -1,6 +1,9 @@
 // src/components/interval.js
 
-class IntervalComponent extends React.Component {
+import React, { Component } from 'react';
+import { connect } from '../slomux/connect';
+
+class IntervalComponent extends Component {
   render() {
     return (
       <div>
