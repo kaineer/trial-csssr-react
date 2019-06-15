@@ -20,10 +20,10 @@ class IntervalComponent extends Component {
 }
 
 export const Interval = connect(
+  state => ({
+    currentInterval: state
+  }),
   dispatch => ({
     changeInterval: value => dispatch(changeInterval(value))
   }),
-  state => ({
-    currentInterval: state
-  })
 )(IntervalComponent);
