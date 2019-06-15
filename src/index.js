@@ -13,7 +13,6 @@ import PropTypes from "prop-types";
 // При нажатии на "стоп" секундомер должен останавливаться и сбрасывать свое значение
 
 import { createStore } from './slomux/store';
-import { connect } from './slomux/connect';
 import { Provider } from './components/provider';
 import { reducer } from './reducer';
 
