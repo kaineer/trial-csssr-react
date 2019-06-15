@@ -21,7 +21,7 @@ import { Timer } from './components/timer';
 
 // init
 ReactDOM.render(
-  <Provider store={createStore(reducer)}>
+  <Provider store={createStore(reducer, 1)}>
     <Timer />
   </Provider>,
   document.getElementById("app")
