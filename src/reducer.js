@@ -11,9 +11,11 @@ export const ActionCreator = {
 
 // reducers
 export const reducer = (state, action) => {
-  switch (action.type) {
+  const {type, payload} = action;
+
+  switch (type) {
     case CHANGE_INTERVAL:
-      state += action.payload;
+      state += payload;
       if (state < 1) {
         state = 1;
       }
