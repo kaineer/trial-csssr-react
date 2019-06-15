@@ -5,13 +5,13 @@ import { object } from 'prop-types';
 
 export class Provider extends Component {
   getChildContext() {
-    return {
-      store: this.props.store
-    };
+    const { store } = this.props;
+    return { store };
   }
 
   render() {
-    return Children.only(this.props.children);
+    const { children } = this.props;
+    return Children.only(children);
   }
 }
 
