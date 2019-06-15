@@ -1,5 +1,8 @@
 // src/slomux/connect.js
 
+import React from 'react';
+import { object } from 'prop-types';
+
 export const connect = (mapStateToProps, mapDispatchToProps) => Component => {
   class WrappedComponent extends React.Component {
     render() {
@@ -22,7 +25,7 @@ export const connect = (mapStateToProps, mapDispatchToProps) => Component => {
   }
 
   WrappedComponent.contextTypes = {
-    store: PropTypes.object
+    store: object
   };
 
   return WrappedComponent;
