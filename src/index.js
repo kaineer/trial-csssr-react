@@ -12,20 +12,7 @@ import PropTypes from "prop-types";
 // При нажатии на "старт" должен запускаться секундомер и через заданный интервал времени увеличивать свое значение на значение интервала
 // При нажатии на "стоп" секундомер должен останавливаться и сбрасывать свое значение
 
-const createStore = (reducer, initialState) => {
-  let currentState = initialState;
-  const listeners = [];
-
-  const getState = () => currentState;
-  const dispatch = action => {
-    currentState = reducer(currentState, action);
-    listeners.forEach(listener => listener());
-  };
-
-  const subscribe = listener => listeners.push(listener);
-
-  return { getState, dispatch, subscribe };
-};
+import { createStore } from './slomux/store';
 
 const connect = (mapStateToProps, mapDispatchToProps) => Component => {
   class WrappedComponent extends React.Component {
