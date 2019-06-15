@@ -1,6 +1,5 @@
 // src/reducer.js
 
-// actions
 const CHANGE_INTERVAL = "CHANGE_INTERVAL";
 
 export const ActionCreator = {
@@ -9,11 +8,6 @@ export const ActionCreator = {
     payload: value,
   })
 };
-
-const changeInterval = value => ({
-  type: CHANGE_INTERVAL,
-  payload: value
-});
 
 // reducers
 export const reducer = (state, action) => {
