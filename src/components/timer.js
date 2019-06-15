@@ -11,7 +11,8 @@ class TimerComponent extends Component {
     super(props);
 
     this.state = {
-      currentTime: 0
+      currentTime: 0,
+      running: false
     };
 
     this.handleStart = this.handleStart.bind(this);
