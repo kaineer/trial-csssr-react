@@ -4,6 +4,7 @@ import React from 'react';
 import { connect } from '../slomux/connect';
 
 import { func, number } from 'prop-types';
+import {ActionCreator} from '../reducer';
 
 const IntervalComponent = ({currentInterval, changeInterval}) => (
   <div>
@@ -27,6 +28,6 @@ export const Interval = connect(
     currentInterval: state
   }),
   dispatch => ({
-    changeInterval: value => dispatch(changeInterval(value))
+    changeInterval: value => dispatch(ActionCreator.changeInterval(value))
   }),
 )(IntervalComponent);
