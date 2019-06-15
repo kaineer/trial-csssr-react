@@ -14,22 +14,7 @@ import PropTypes from "prop-types";
 
 import { createStore } from './slomux/store';
 import { connect } from './slomux/connect';
-
-class Provider extends React.Component {
-  getChildContext() {
-    return {
-      store: this.props.store
-    };
-  }
-
-  render() {
-    return React.Children.only(this.props.children);
-  }
-}
-
-Provider.childContextTypes = {
-  store: PropTypes.object
-};
+import { Provider } from './components/provider';
 
 // APP
 
