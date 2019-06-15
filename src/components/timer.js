@@ -13,6 +13,9 @@ class TimerComponent extends Component {
     this.state = {
       currentTime: 0
     };
+
+    this.handleStart = this.handleStart.bind(this);
+    this.handleStop = this.handleStop.bind(this);
   }
 
   render() {
