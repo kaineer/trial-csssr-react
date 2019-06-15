@@ -59,7 +59,10 @@ class TimerComponent extends Component {
   }
 
   handleStop() {
-    this.setState({running: false});
+    this.setState({
+      running: false,
+      currentTime: 0
+    });
   }
 }
 
