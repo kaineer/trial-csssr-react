@@ -83,6 +83,9 @@ const reducer = (state, action) => {
   switch (action.type) {
     case CHANGE_INTERVAL:
       state += action.payload;
+      if (state < 1) {
+        state = 1;
+      }
   }
   return state;
 };
@@ -156,7 +159,7 @@ const Timer = connect(
 
 // init
 ReactDOM.render(
-  <Provider store={createStore(reducer, 0)}>
+  <Provider store={createStore(reducer, 1)}>
     <Timer />
   </Provider>,
   document.getElementById("app")
