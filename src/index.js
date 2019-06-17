@@ -86,6 +86,8 @@ const reducer = (state, action) => {
       if (state < 1) {
         state = 1;
       }
+    default:
+      //
   }
   return state;
 };
