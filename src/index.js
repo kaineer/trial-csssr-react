@@ -163,13 +163,30 @@ class TimerComponent extends React.Component {
     );
   }
 
+  stopTimer() {
+    if (this.timer) {
+      clearTimeout(this.timer);
+      this.timer = null;
+    }
+  }
+
   handleStart() {
     this.setState({ running: true });
-    this.startTimer();
   }
 
   handleStop() {
     this.setState({ running: false, currentTime: 0 });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { running } = this.state;
+    const { running: prevRunning } = prevState;
+
+    if (running && !prevRunning) {
+      this.startTimer();
+    } else if (!running && prevRunning) {
+      this.stopTimer();
+    }
   }
 }
 
