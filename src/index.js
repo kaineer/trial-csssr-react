@@ -118,9 +118,14 @@ const Interval = connect(
 )(IntervalComponent);
 
 class TimerComponent extends React.Component {
-  state = {
-    currentTime: 0
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      currentTime: 0,
+      running: false,
+    };
+  }
 
   render() {
     return (
