@@ -40,12 +40,8 @@ const connect = (mapStateToProps, mapDispatchToProps) => Component => {
     }
 
     componentDidMount() {
-      this.context.store.subscribe(this.handleChange);
+      this.context.store.subscribe(() => this.forceUpdate());
     }
-
-    handleChange = () => {
-      this.forceUpdate();
-    };
   }
 
   WrappedComponent.contextTypes = {
