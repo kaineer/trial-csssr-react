@@ -125,6 +125,9 @@ class TimerComponent extends React.Component {
       currentTime: 0,
       running: false,
     };
+
+    this.handleStart = this.handleStart.bind(this);
+    this.handleStop = this.handleStop.bind(this);
   }
 
   render() {
