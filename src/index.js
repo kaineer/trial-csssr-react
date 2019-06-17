@@ -143,18 +143,17 @@ class TimerComponent extends React.Component {
     );
   }
 
+  startTimer() {
+    // TODO
+  }
+
   handleStart() {
-    setTimeout(
-      () =>
-        this.setState({
-          currentTime: this.state.currentTime + this.props.currentInterval
-        }),
-      this.props.currentInterval
-    );
+    this.setState({ running: true });
+    this.startTimer();
   }
 
   handleStop() {
-    this.setState({ currentTime: 0 });
+    this.setState({ running: false, currentTime: 0 });
   }
 }
 
