@@ -89,21 +89,21 @@ const reducer = (state, action) => {
 
 // components
 
-class IntervalComponent extends React.Component {
-  render() {
-    return (
-      <div>
-        <span>
-          Интервал обновления секундомера: {this.props.currentInterval} сек.
-        </span>
-        <span>
-          <button onClick={() => this.props.changeInterval(-1)}>-</button>
-          <button onClick={() => this.props.changeInterval(1)}>+</button>
-        </span>
-      </div>
-    );
-  }
-}
+const IntervalComponent = (props) => {
+  const {currentInterval, changeInterval} = props;
+
+  return (
+    <div>
+      <span>
+        Интервал обновления секундомера: {currentInterval} сек.
+      </span>
+      <span>
+        <button onClick={() => changeInterval(-1)}>-</button>
+        <button onClick={() => changeInterval(1)}>+</button>
+      </span>
+    </div>
+  );
+};
 
 const Interval = connect(
   dispatch => ({
