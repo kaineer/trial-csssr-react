@@ -106,12 +106,12 @@ const IntervalComponent = (props) => {
 };
 
 const Interval = connect(
+  state => ({
+    currentInterval: state
+  }),
   dispatch => ({
     changeInterval: value => dispatch(changeInterval(value))
   }),
-  state => ({
-    currentInterval: state
-  })
 )(IntervalComponent);
 
 class TimerComponent extends React.Component {
