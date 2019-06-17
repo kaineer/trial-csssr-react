@@ -111,7 +111,7 @@ const Interval = connect(
   }),
   dispatch => ({
     changeInterval: value => dispatch(changeInterval(value))
-  }),
+  })
 )(IntervalComponent);
 
 class TimerComponent extends React.Component {
@@ -156,7 +156,7 @@ const Timer = connect(
 
 // init
 ReactDOM.render(
-  <Provider store={createStore(reducer)}>
+  <Provider store={createStore(reducer, 0)}>
     <Timer />
   </Provider>,
   document.getElementById("app")
